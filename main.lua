@@ -20,6 +20,64 @@ local TEX_FUMBLER = get_texture_info("fumbler_icon")
 local TEX_JUMBLER = get_texture_info("jumbler_icon")
 local TEX_HUMBLER = get_texture_info("humbler_icon")
 
+--[[
+jumbler_brooklyn.ogg
+jumbler_check_it.ogg
+jumbler_dizzy.ogg
+jumbler_hey.ogg
+jumbler_hohoho.ogg
+jumbler_hohohooo.ogg
+jumbler_hoo_yahoo.ogg
+jumbler_long_jump.ogg
+jumbler_long_jump_2.ogg
+jumbler_my_power.ogg
+jumbler_nice.ogg
+jumbler_nothing_to_me.ogg
+jumbler_oh_yeah.ogg
+jumbler_skate.ogg
+jumbler_talent.ogg
+]]
+
+local VOICETABLE_JUMBLER = {
+    [CHAR_SOUND_OKEY_DOKEY] = 'jumbler_skate.ogg',
+	[CHAR_SOUND_LETS_A_GO] = 'jumbler_skate.ogg',
+	--[CHAR_SOUND_PUNCH_YAH] = {'humbler_punch1.ogg', 'humbler_punch2.ogg'},
+	--[CHAR_SOUND_PUNCH_WAH] = {'humbler_punch1.ogg', 'humbler_punch2.ogg'},
+    [CHAR_SOUND_WAH2] = 'jumbler_hohoho.ogg',
+	--[CHAR_SOUND_PUNCH_HOO] = 'humbler_kick.ogg',
+	[CHAR_SOUND_YAH_WAH_HOO] = {'jumbler_hey.ogg', 'jumbler_nice.ogg'},
+	[CHAR_SOUND_HOOHOO] = {'jumbler_hohoho.ogg', 'jumbler_check_it.ogg'},
+	[CHAR_SOUND_YAHOO_WAHA_YIPPEE] = {'jumbler_hohohooo.ogg', 'jumbler_long_jump.ogg', 'jumbler_long_jump_2.ogg'},
+	--[CHAR_SOUND_UH] = 'humbler_punch2.ogg',
+	--[CHAR_SOUND_UH2] = 'humbler_grab.ogg',
+	--[CHAR_SOUND_UH2_2] = nil,
+	[CHAR_SOUND_HAHA] = 'jumbler_hohoho.ogg',
+	[CHAR_SOUND_YAHOO] = {'jumbler_long_jump.ogg', 'jumbler_long_jump_2.ogg'},
+	--[CHAR_SOUND_DOH] = 'humbler_punch2.ogg',
+	--[CHAR_SOUND_WHOA] = 'humbler_wow.ogg',
+	--[CHAR_SOUND_EEUH] = 'humbler_eeuh.ogg',
+	[CHAR_SOUND_WAAAOOOW] = 'jumbler_hohohooo.ogg',
+	[CHAR_SOUND_TWIRL_BOUNCE] = 'jumbler_dizzy.ogg',
+	[CHAR_SOUND_GROUND_POUND_WAH] = 'jumbler_check_it.ogg',
+	--[CHAR_SOUND_HRMM] = 'humbler_grab.ogg',
+	[CHAR_SOUND_HERE_WE_GO] = 'jumbler_brooklyn.ogg',
+	[CHAR_SOUND_SO_LONGA_BOWSER] = 'jumbler_my_power.ogg',
+ 	--[CHAR_SOUND_OOOF] = 'humbler_hurt.ogg',
+ 	--[CHAR_SOUND_OOOF2] = 'humbler_hurt.ogg',
+	--[CHAR_SOUND_ATTACKED] = 'humbler_hurt.ogg',
+	--[CHAR_SOUND_PANTING] = 'humbler_pant.ogg',
+    --[CHAR_SOUND_PANTING_COLD] = 'humbler_pant.ogg',
+	[CHAR_SOUND_ON_FIRE] = {'jumbler_hohohooo.ogg', 'jumbler_long_jump.ogg', 'jumbler_long_jump_2.ogg'},
+	--[CHAR_SOUND_SNORING1] = 'humbler_snore1.ogg',
+	--[CHAR_SOUND_SNORING2] = 'humbler_snore2.ogg',
+	--[CHAR_SOUND_COUGHING1] = 'humbler_cough.ogg',
+	--[CHAR_SOUND_COUGHING2] = 'humbler_cough.ogg',
+	--[CHAR_SOUND_COUGHING3] = 'humbler_cough.ogg',
+	[CHAR_SOUND_DYING] = 'jumbler_dizzy.ogg',
+	--[CHAR_SOUND_DROWNING] = 'humbler_drowning.ogg',
+	[CHAR_SOUND_MAMA_MIA] = 'jumbler_nothing_to_me.ogg',
+}
+
 local VOICETABLE_HUMBLER = {
     [CHAR_SOUND_OKEY_DOKEY] = 'humbler_herewego.ogg',
 	[CHAR_SOUND_LETS_A_GO] = 'humbler_herewego.ogg',
@@ -331,6 +389,7 @@ local function on_character_select_load()
 	end
     _G.charSelect.character_add_animations(E_MODEL_JUMBLER, ANIMTABLE_JUMBLER, EYES_FUMBLER)
     _G.charSelect.character_add_health_meter(CT_JUMBLER, HEALTH_METER_LUIGI)
+    _G.charSelect.character_add_voice(E_MODEL_JUMBLER, VOICETABLE_JUMBLER)
 
     if CT_J_WARIO ~= nil then
         
